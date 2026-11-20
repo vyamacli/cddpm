@@ -1,0 +1,7 @@
+{
+  "dataset": "severson",
+  "source_split": "train",
+  "counter_column": "life_index",
+  "rule": "life_abs = life_index / max(life_index over the training split); not clipped",
+  "life_scale": 2159
+}

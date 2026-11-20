@@ -1,0 +1,47 @@
+{
+  "dataset": "nasa",
+  "source_split": "train",
+  "n_train_samples": 3876,
+  "train_batteries": [
+    "B0005",
+    "B0007",
+    "B0026",
+    "B0027",
+    "B0030",
+    "B0031",
+    "B0032",
+    "B0033",
+    "B0034",
+    "B0036",
+    "B0038",
+    "B0039",
+    "B0040",
+    "B0041",
+    "B0042",
+    "B0043",
+    "B0045",
+    "B0047",
+    "B0048",
+    "B0049",
+    "B0050",
+    "B0053",
+    "B0055"
+  ],
+  "channels": [
+    "voltage",
+    "capacity_local"
+  ],
+  "units": [
+    "V",
+    "Ah"
+  ],
+  "min": [
+    1.3263821601867676,
+    0.0
+  ],
+  "max": [
+    4.542325496673584,
+    2.6401491165161133
+  ],
+  "rule": "x_norm = (x_raw - min) / (max - min) per channel; min and max over the training split"
+}

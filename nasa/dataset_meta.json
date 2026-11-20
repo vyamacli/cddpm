@@ -1,0 +1,491 @@
+{
+    "dataset_name": "NASA Battery Data Set",
+    "preprocessing_version": "v3_improved_conditions",
+    "seq_len": 512,
+    "channels": [
+        "voltage",
+        "capacity_local"
+    ],
+    "condition_vector": [
+        "battery_norm",
+        "life_norm",
+        "current_norm",
+        "step_norm"
+    ],
+    "condition_dim": 4,
+    "battery_ids": [
+        "B0005",
+        "B0006",
+        "B0007",
+        "B0018",
+        "B0025",
+        "B0026",
+        "B0027",
+        "B0028",
+        "B0029",
+        "B0030",
+        "B0031",
+        "B0032",
+        "B0033",
+        "B0034",
+        "B0036",
+        "B0038",
+        "B0039",
+        "B0040",
+        "B0041",
+        "B0042",
+        "B0043",
+        "B0044",
+        "B0045",
+        "B0046",
+        "B0047",
+        "B0048",
+        "B0049",
+        "B0050",
+        "B0051",
+        "B0053",
+        "B0054",
+        "B0055",
+        "B0056"
+    ],
+    "battery_to_idx": {
+        "B0005": 0,
+        "B0006": 1,
+        "B0007": 2,
+        "B0018": 3,
+        "B0025": 4,
+        "B0026": 5,
+        "B0027": 6,
+        "B0028": 7,
+        "B0029": 8,
+        "B0030": 9,
+        "B0031": 10,
+        "B0032": 11,
+        "B0033": 12,
+        "B0034": 13,
+        "B0036": 14,
+        "B0038": 15,
+        "B0039": 16,
+        "B0040": 17,
+        "B0041": 18,
+        "B0042": 19,
+        "B0043": 20,
+        "B0044": 21,
+        "B0045": 22,
+        "B0046": 23,
+        "B0047": 24,
+        "B0048": 25,
+        "B0049": 26,
+        "B0050": 27,
+        "B0051": 28,
+        "B0053": 29,
+        "B0054": 30,
+        "B0055": 31,
+        "B0056": 32
+    },
+    "life_normalization": {
+        "method": "per_battery_per_step_minmax",
+        "ranges": {
+            "B0005": {
+                "charge": {
+                    "min": 1,
+                    "max": 169
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 168
+                }
+            },
+            "B0006": {
+                "charge": {
+                    "min": 1,
+                    "max": 169
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 168
+                }
+            },
+            "B0007": {
+                "charge": {
+                    "min": 1,
+                    "max": 169
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 168
+                }
+            },
+            "B0018": {
+                "charge": {
+                    "min": 1,
+                    "max": 134
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 132
+                }
+            },
+            "B0025": {
+                "charge": {
+                    "min": 1,
+                    "max": 31
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 28
+                }
+            },
+            "B0026": {
+                "charge": {
+                    "min": 1,
+                    "max": 31
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 28
+                }
+            },
+            "B0027": {
+                "charge": {
+                    "min": 1,
+                    "max": 31
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 28
+                }
+            },
+            "B0028": {
+                "charge": {
+                    "min": 1,
+                    "max": 31
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 28
+                }
+            },
+            "B0029": {
+                "charge": {
+                    "min": 1,
+                    "max": 40
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 40
+                }
+            },
+            "B0030": {
+                "charge": {
+                    "min": 1,
+                    "max": 40
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 40
+                }
+            },
+            "B0031": {
+                "charge": {
+                    "min": 1,
+                    "max": 40
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 40
+                }
+            },
+            "B0032": {
+                "charge": {
+                    "min": 1,
+                    "max": 40
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 40
+                }
+            },
+            "B0033": {
+                "charge": {
+                    "min": 1,
+                    "max": 197
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 197
+                }
+            },
+            "B0034": {
+                "charge": {
+                    "min": 1,
+                    "max": 197
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 197
+                }
+            },
+            "B0036": {
+                "charge": {
+                    "min": 1,
+                    "max": 197
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 197
+                }
+            },
+            "B0038": {
+                "charge": {
+                    "min": 1,
+                    "max": 47
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 47
+                }
+            },
+            "B0039": {
+                "charge": {
+                    "min": 1,
+                    "max": 47
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 47
+                }
+            },
+            "B0040": {
+                "charge": {
+                    "min": 1,
+                    "max": 47
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 47
+                }
+            },
+            "B0041": {
+                "charge": {
+                    "min": 1,
+                    "max": 67
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 67
+                }
+            },
+            "B0042": {
+                "charge": {
+                    "min": 1,
+                    "max": 113
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 112
+                }
+            },
+            "B0043": {
+                "charge": {
+                    "min": 1,
+                    "max": 113
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 112
+                }
+            },
+            "B0044": {
+                "charge": {
+                    "min": 1,
+                    "max": 113
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 112
+                }
+            },
+            "B0045": {
+                "charge": {
+                    "min": 1,
+                    "max": 72
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 72
+                }
+            },
+            "B0046": {
+                "charge": {
+                    "min": 1,
+                    "max": 72
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 72
+                }
+            },
+            "B0047": {
+                "charge": {
+                    "min": 1,
+                    "max": 72
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 72
+                }
+            },
+            "B0048": {
+                "charge": {
+                    "min": 1,
+                    "max": 72
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 72
+                }
+            },
+            "B0049": {
+                "charge": {
+                    "min": 1,
+                    "max": 25
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 25
+                }
+            },
+            "B0050": {
+                "charge": {
+                    "min": 1,
+                    "max": 20
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 21
+                }
+            },
+            "B0051": {
+                "charge": {
+                    "min": 1,
+                    "max": 25
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 25
+                }
+            },
+            "B0053": {
+                "charge": {
+                    "min": 1,
+                    "max": 55
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 55
+                }
+            },
+            "B0054": {
+                "charge": {
+                    "min": 1,
+                    "max": 102
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 102
+                }
+            },
+            "B0055": {
+                "charge": {
+                    "min": 1,
+                    "max": 102
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 102
+                }
+            },
+            "B0056": {
+                "charge": {
+                    "min": 1,
+                    "max": 102
+                },
+                "discharge": {
+                    "min": 1,
+                    "max": 102
+                }
+            }
+        },
+        "formula": "(life_index - battery_step_min) / (battery_step_max - battery_step_min)"
+    },
+    "current_normalization": {
+        "method": "step_specific_minmax",
+        "ranges": {
+            "charge": {
+                "min": 0.017613732629103266,
+                "max": 1.5130617722886295
+            },
+            "discharge": {
+                "min": -3.976472905870513,
+                "max": -0.1977094301032127
+            }
+        },
+        "formula": "(mean_current - step_current_min) / (step_current_max - step_current_min)"
+    },
+    "step_encoding": {
+        "charge": 0.0,
+        "discharge": 1.0
+    },
+    "excluded_batteries": [
+        "B0052"
+    ],
+    "capacity_local_method": "Cumulative trapezoidal integration of absolute measured current over time",
+    "discharge_capacity_scaling": "Scaled to NASA official scalar Capacity",
+    "split": {
+        "train": [
+            "B0005",
+            "B0007",
+            "B0026",
+            "B0027",
+            "B0030",
+            "B0031",
+            "B0032",
+            "B0033",
+            "B0034",
+            "B0036",
+            "B0038",
+            "B0039",
+            "B0040",
+            "B0041",
+            "B0042",
+            "B0043",
+            "B0045",
+            "B0047",
+            "B0048",
+            "B0049",
+            "B0050",
+            "B0053",
+            "B0055"
+        ],
+        "val": [
+            "B0018",
+            "B0025",
+            "B0044",
+            "B0051",
+            "B0054"
+        ],
+        "test": [
+            "B0006",
+            "B0028",
+            "B0029",
+            "B0046",
+            "B0056"
+        ]
+    },
+    "split_seed": 42,
+    "split_mode": "automatic",
+    "num_unique_mat_files": 33,
+    "num_duplicate_mat_files": 4,
+    "num_excluded_mat_files": 1
+}

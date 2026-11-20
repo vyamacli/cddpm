@@ -1,0 +1,28 @@
+{
+  "dataset": "calce",
+  "source_split": "train",
+  "n_train_samples": 14359,
+  "train_batteries": [
+    "CX2_33",
+    "CX2_34",
+    "CX2_35",
+    "CX2_36"
+  ],
+  "channels": [
+    "voltage",
+    "capacity_local"
+  ],
+  "units": [
+    "V",
+    "Ah"
+  ],
+  "min": [
+    2.698455333709717,
+    0.0
+  ],
+  "max": [
+    4.199949741363525,
+    1.365957260131836
+  ],
+  "rule": "x_norm = (x_raw - min) / (max - min) per channel; min and max over the training split"
+}

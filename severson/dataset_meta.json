@@ -1,0 +1,114 @@
+{
+  "source": "Severson et al., Nature Energy 4, 383-391 (2019); data.matr.io, CC BY 4.0",
+  "options": {
+    "stride": 10,
+    "policy_correction": "table",
+    "logging_gap": "exclude",
+    "partner_drop": "both",
+    "discharge_mode": "full",
+    "val_rule": "lifepos",
+    "counter_jump": "exclude"
+  },
+  "seq_len": 512,
+  "channels": [
+    "voltage",
+    "capacity_local"
+  ],
+  "units": [
+    "V",
+    "Ah"
+  ],
+  "resampling": "np.interp over record order (linspace(0,1,n) -> linspace(0,1,512)), as CALCE",
+  "x_norm": "per-segment min-max of the resampled x_raw (CALCE convention)",
+  "cond_npz": [
+    "life_index",
+    "step_code",
+    "C1",
+    "Q1",
+    "C2"
+  ],
+  "cond_note": "RAW, unscaled 5-vector. step_code 0=charge (fast-charge part only), 1=discharge. C1, C2 in C-rate (1C = 1.1 A), Q1 in % SOC. Not the 4-column CALCE/NASA vector.",
+  "life_index": "true cycle number of the cell (summary 'cycle', 1-based; batch-2 continuation cycles numbered after the batch-1 record)",
+  "current_unit": "raw I field is in C-rate units (1C = 1.1 A)",
+  "thresholds": {
+    "THR_CRATE": 0.05,
+    "REST_MIN": 0.1,
+    "FLAT_DQ": 0.0005,
+    "PAUSE_RATE_A": 0.1,
+    "MIN_POINTS": 40,
+    "MAX_POINTS": {
+      "charge": 2500,
+      "discharge": 1500
+    },
+    "MAX_DURATION_MIN": {
+      "charge": 40.0,
+      "discharge": 40.0
+    },
+    "MAX_DT_MIN": 1.0,
+    "CAP_DROP_TOL": 0.001,
+    "Q80_AH": 0.88,
+    "CHARGE_END_TOL": 0.01,
+    "CHARGE_CUT_TOL": 0.005,
+    "V_OVER_FLAG_ABOVE": 3.605,
+    "JUMP_MIN_DQ": 0.005,
+    "JUMP_RATE_A": 17.6,
+    "DIS_CV_START_V": 2.002
+  },
+  "policy_corrections": {
+    "b2c12": {
+      "C2": 5.5,
+      "reason": "policy string truncated ('4C(31%)-5', 'policy' field too); second stage ran at 5.5C (measured 5.50C; batch-2 10-min rule 0.31/4 + 0.49/C2 = 1/6 h gives 5.5)"
+    },
+    "b3c7": {
+      "C1": 4.363636363636363,
+      "C2": 4.363636363636363,
+      "reason": "string 4.8C(80%)-4.8C, but the tester applied 4.8 A = 4.8/1.1 = 4.3636C (measured median 4.36C in every cycle checked)"
+    },
+    "b3c10": {
+      "C1": 4.363636363636363,
+      "C2": 4.363636363636363,
+      "reason": "string 4.8C(80%)-4.8C, but the tester applied 4.8 A = 4.8/1.1 = 4.3636C (measured median 4.36C in every cycle checked)"
+    },
+    "b3c16": {
+      "C1": 4.363636363636363,
+      "C2": 4.363636363636363,
+      "reason": "string 4.8C(80%)-4.8C, but the tester applied 4.8 A = 4.8/1.1 = 4.3636C (measured median 4.36C in every cycle checked)"
+    },
+    "b3c45": {
+      "C1": 4.363636363636363,
+      "C2": 4.363636363636363,
+      "reason": "string 4.8C(80%)-4.8C, but the tester applied 4.8 A = 4.8/1.1 = 4.3636C (measured median 4.36C in every cycle checked)"
+    }
+  },
+  "dropped_records": [
+    "b1c8",
+    "b1c10",
+    "b1c12",
+    "b1c13",
+    "b1c22",
+    "b3c2",
+    "b3c23",
+    "b3c32",
+    "b3c37",
+    "b3c42",
+    "b3c43"
+  ],
+  "continuations": {
+    "b1c0": "b2c7",
+    "b1c1": "b2c8",
+    "b1c2": "b2c9",
+    "b1c3": "b2c15",
+    "b1c4": "b2c16"
+  },
+  "validation_cells": [
+    "b2c4",
+    "b2c27",
+    "b2c31",
+    "b1c21",
+    "b1c15",
+    "b1c28",
+    "b1c3"
+  ],
+  "unparsed_policies": [],
+  "n_segments": 20256
+}

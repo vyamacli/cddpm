@@ -1,0 +1,39 @@
+{
+    "battery_ids": [
+        "CX2_33",
+        "CX2_34",
+        "CX2_35",
+        "CX2_36",
+        "CX2_37",
+        "CX2_38"
+    ],
+    "battery_to_idx": {
+        "CX2_33": 0,
+        "CX2_34": 1,
+        "CX2_35": 2,
+        "CX2_36": 3,
+        "CX2_37": 4,
+        "CX2_38": 5
+    },
+    "seq_len": 512,
+    "channels": [
+        "voltage",
+        "capacity_local"
+    ],
+    "condition_vector": [
+        "battery_norm",
+        "life_norm",
+        "current_norm",
+        "step_norm"
+    ],
+    "step_encoding": {
+        "2_charge": 0.0,
+        "7_discharge": 1.0
+    },
+    "current_normalization": {
+        "current_min": -1.3506903648376465,
+        "current_max": 0.6757553815841675,
+        "formula": "(mean_current - current_min) / (current_max - current_min)"
+    },
+    "max_life_index": 1971
+}

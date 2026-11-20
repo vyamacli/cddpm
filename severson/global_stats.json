@@ -1,0 +1,58 @@
+{
+  "dataset": "severson",
+  "source_split": "train",
+  "n_train_samples": 4634,
+  "train_batteries": [
+    "b1c1",
+    "b1c11",
+    "b1c17",
+    "b1c19",
+    "b1c24",
+    "b1c26",
+    "b1c30",
+    "b1c32",
+    "b1c34",
+    "b1c36",
+    "b1c38",
+    "b1c40",
+    "b1c42",
+    "b1c44",
+    "b1c5",
+    "b1c7",
+    "b2c0",
+    "b2c11",
+    "b2c13",
+    "b2c17",
+    "b2c19",
+    "b2c2",
+    "b2c21",
+    "b2c23",
+    "b2c25",
+    "b2c29",
+    "b2c33",
+    "b2c35",
+    "b2c37",
+    "b2c39",
+    "b2c41",
+    "b2c43",
+    "b2c45",
+    "b2c6"
+  ],
+  "channels": [
+    "voltage",
+    "capacity_local"
+  ],
+  "units": [
+    "V",
+    "Ah"
+  ],
+  "min": [
+    1.9956220388412476,
+    0.0
+  ],
+  "max": [
+    3.6694250106811523,
+    1.097046971321106
+  ],
+  "rule": "x_norm = (x_raw - min) / (max - min) per channel; min and max over the training split"
+}
